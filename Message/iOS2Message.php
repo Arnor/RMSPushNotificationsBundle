@@ -13,6 +13,6 @@ class iOS2Message extends AppleMessage
      */
     public function getTargetOS()
     {
-        return Types::OS_IOS;
+        return Types::OS_IOS2;
     }
 }
