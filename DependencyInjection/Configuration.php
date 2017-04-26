@@ -24,6 +24,7 @@ class Configuration implements ConfigurationInterface
 
         $this->addAndroid();
         $this->addiOS();
+        $this->addiOS2();
         $this->addMac();
         $this->addBlackberry();
         $this->addWindowsphone();
@@ -80,6 +81,14 @@ class Configuration implements ConfigurationInterface
     protected function addiOS()
     {
         $this->addApple("ios");
+    }
+
+    /**
+     * iOS configuration
+     */
+    protected function addiOS2()
+    {
+        $this->addApple("ios2");
     }
 
     /**

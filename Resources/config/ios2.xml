@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
         <parameter key="rms_push_notifications.ios2.class">RMS\PushNotificationsBundle\Service\OS\AppleNotification</parameter>
@@ -10,7 +10,7 @@
     <services>
 
         <!-- iOS-->
-        <service id="rms_push_notifications.ios" class="%rms_push_notifications.ios2.class%" public="false">
+        <service id="rms_push_notifications.ios2" class="%rms_push_notifications.ios.class%" public="false">
             <argument>%rms_push_notifications.ios2.sandbox%</argument>
             <argument>%rms_push_notifications.ios2.pem%</argument>
             <argument>%rms_push_notifications.ios2.passphrase%</argument>
@@ -19,11 +19,11 @@
             <argument>%kernel.cache_dir%</argument>
             <argument type="service" id="rms_push_notifications.event_listener" />
             <argument type="service" id="logger" />
-            <tag name="rms_push_notifications.handler" osType="rms_push_notifications.os.ios" />
+            <tag name="rms_push_notifications.handler" osType="rms_push_notifications.os.ios2" />
         </service>
 
         <!-- iOS Feedback requests -->
-        <service id="rms_push_notifications.ios2.feedback" class="%rms_push_notifications.ios2.feedback.class%">
+        <service id="rms_push_notifications.ios2.feedback" class="%rms_push_notifications.ios.feedback.class%">
             <argument>%rms_push_notifications.ios2.sandbox%</argument>
             <argument>%rms_push_notifications.ios2.pem%</argument>
             <argument>%rms_push_notifications.ios2.passphrase%</argument>

@@ -47,7 +47,7 @@ class RMSPushNotificationsExtension extends Extension
             $loader->load('ios.xml');
         }
         if (isset($config["ios2"])) {
-            $this->setiOSConfig($config);
+            $this->setiOS2Config($config);
             $loader->load('ios2.xml');
         }
         if (isset($config["mac"])) {
@@ -116,6 +116,16 @@ class RMSPushNotificationsExtension extends Extension
     protected function setiOSConfig(array $config)
     {
         $this->setAppleConfig($config, "ios");
+    }
+
+    /**
+     * Sets iOS config into container
+     *
+     * @param array $config
+     */
+    protected function setiOS2Config(array $config)
+    {
+        $this->setAppleConfig($config, "ios2");
     }
 
     /**
