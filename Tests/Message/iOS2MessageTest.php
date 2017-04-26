@@ -7,7 +7,7 @@ use RMS\PushNotificationsBundle\Device\Types,
     RMS\PushNotificationsBundle\Message\MessageInterface;
 use RMS\PushNotificationsBundle\Message\iOS2Message;
 
-class iOSMessageTest extends \PHPUnit_Framework_TestCase
+class iOS2MessageTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreation()
     {

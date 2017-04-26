@@ -46,6 +46,10 @@ class RMSPushNotificationsExtension extends Extension
             $this->setiOSConfig($config);
             $loader->load('ios.xml');
         }
+        if (isset($config["ios2"])) {
+            $this->setiOSConfig($config);
+            $loader->load('ios2.xml');
+        }
         if (isset($config["mac"])) {
             $this->setMacConfig($config);
             $loader->load('mac.xml');
@@ -134,7 +138,7 @@ class RMSPushNotificationsExtension extends Extension
      */
     protected function setAppleConfig(array $config, $os)
     {
-        $supportedAppleOS = array("mac", "ios");
+        $supportedAppleOS = array("mac", "ios", "ios2");
         //Check if the OS is supported
         if (!in_array($os, $supportedAppleOS, true)) {
             throw new \RuntimeException(sprintf('This Apple OS "%s" is not supported', $os));
